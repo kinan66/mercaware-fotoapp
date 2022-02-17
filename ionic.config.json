@@ -1,0 +1,7 @@
+{
+  "name": "Mercaware - Fotoapp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
