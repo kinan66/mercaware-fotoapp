@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button color="primary" menu="m1"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Dokumentenart</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-text-center ion-justify-content-center">
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col class="ion-text-center" size="12" size-md="6" offset-md='3'>
+        <ion-icon name="document-text-outline"></ion-icon>
+        <ion-text class="ion-text-center margin-bottom" color="dark">
+          <h1 class="margin-minus marg"> Wählen Sie bitte den Typ des zu scannenden Dokuments.
+          </h1>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+
+<ion-footer>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col class="ion-text-center" size="12">
+        <ion-button color="primary" [routerLink]="['/buchungsbeleg']" fill="solid" expand="full" shape="round">
+          <ion-label>Buchungsbeleg</ion-label>
+        </ion-button>
+      </ion-col>
+
+      <ion-col class="ion-text-center" size="12">
+        <ion-button color="primary" [routerLink]="['/abliefernachweis']" fill="solid" expand="full" shape="round">
+          <ion-label>Abliefernachweise</ion-label>
+        </ion-button>
+      </ion-col>
+
+      <ion-col class="ion-text-center" size="12">
+        <ion-button color="primary" [routerLink]="['/reisekosten']" fill="solid" expand="full" shape="round">
+          <ion-label>Reisekosten</ion-label>
+        </ion-button>
+      </ion-col>
+
+      <ion-col class="ion-text-center" size="12">
+        <ion-button color="primary" [routerLink]="['/buchungsbeleg']" fill="solid" expand="full" shape="round">
+          <ion-label>Barasulagen</ion-label>
+        </ion-button>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+</ion-footer>

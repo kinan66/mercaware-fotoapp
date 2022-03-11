@@ -1,0 +1,49 @@
+<ion-content>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12">
+        <ion-img class="ion-padding logo" src="assets/imgs/logo.png"></ion-img>
+      </ion-col>
+      <ion-col size="12">
+        <div class="ion-text-center">
+          <h3>Login</h3>
+
+        </div>
+        <form [formGroup]="loginForm">
+          <ion-grid>
+            <ion-row>
+              <ion-col size="12" size-md="6" offset-md='3'>
+                <ion-item>
+                  <ion-label position="floating">Username</ion-label>
+                  <ion-input type="text" name="email" placeholder="Email" formControlName="email">
+                  </ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label position="floating">Passwort</ion-label>
+                  <ion-input type="password" name="password" placeholder="password" formControlName="password">
+                  </ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="onSettings()">
+      <ion-icon name="settings"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+<ion-footer>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col class="ion-text-center" size="12" size-md="6" offset-md='3'>
+        <ion-button class="ion-align-self-center" (click)="OnLogin()">
+          Login
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button fill='clear' slot="end" (click)="onBack()">
+      <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+    </ion-button>
+
+
+    <ion-title>Server Einstellung</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12">
+        <ion-img class="ion-padding logo" src="assets/imgs/logo.png"></ion-img>
+      </ion-col>
+      <ion-col size="12">
+        <div class="ion-text-center">
+          <h3>Bitte geben Sie die Domain und das Mandant ein.</h3>
+
+        </div>
+
+        <form [formGroup]="serverDataForm">
+          <ion-grid>
+            <ion-row>
+              <ion-col size="12" size-md="6" offset-md='3'>
+                <ion-item>
+                  <ion-label position="floating">Domain</ion-label>
+                  <ion-input type="text" name="domain" placeholder="Domain" formControlName="domain">
+                  </ion-input>
+                </ion-item>
+                <p class="error-message" *ngIf="domain.invalid && (domain.dirty || domain.touched || submitted) ">Dieses
+                  Feld is
+                  erforderlich.</p>
+
+                <ion-item>
+                  <ion-label position="floating">Mandant</ion-label>
+                  <ion-input type="text" name="mandant" placeholder="Mandant" formControlName="mandant">
+                  </ion-input>
+                </ion-item>
+                <p class="error-message" *ngIf="mandant.invalid && (mandant.dirty || mandant.touched || submitted) ">
+                  Dieses
+                  Feld is
+                  erforderlich.</p>
+
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col class="ion-text-center" size="12" size-md="6" offset-md='3'>
+        <ion-button class="ion-align-self-center" (click)="onSubmit()">
+          Weiter zum Login
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

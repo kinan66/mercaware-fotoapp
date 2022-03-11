@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons class="ion-padding-start" slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+
+    </ion-buttons>
+    <ion-title>Buchungsbeleg</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <div class="container">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Ihre Dokumentendaten:</ion-card-title>
+      </ion-card-header>
+
+      <form action="" [formGroup]="abliefernachweisForm">
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="12">
+
+              <ion-item>
+                <ion-label position="stacked">Auftrags-Nr.</ion-label>
+                <ion-select interface="action-sheet" formControlName="orderNumber">
+                  <ion-select-option *ngFor="let template of templates" [value]="template.atnr">
+                    {{template.atnr}}</ion-select-option>
+                </ion-select>
+                <span slot="error"
+                  *ngIf="(!abliefernachweisForm.get('orderNumber').valid && abliefernachweisForm.get('orderNumber').touched) ||(!abliefernachweisForm.get('orderNumber').valid && invalid) ">
+                  Dieses Feld ist erforderlich.
+                </span>
+              </ion-item>
+
+              <ion-item>
+                <ion-label position="stacked">Auftrags-Barcode</ion-label>
+                <ion-input formControlName="barcode" type="text">
+                </ion-input>
+                <span slot="error"
+                  *ngIf="(!abliefernachweisForm.get('barcode').valid && abliefernachweisForm.get('barcode').touched) ||(!abliefernachweisForm.get('barcode').valid && invalid) ">
+                  Dieses Feld ist erforderlich.
+                </span>
+              </ion-item>
+
+              <ion-item formGroupName="address">
+                <ion-label position="stacked">Addresse</ion-label>
+                <ion-input formControlName="company" type="text" placeholder="Firma">
+                </ion-input>
+                <ion-input formControlName="street" type="text" placeholder="Straße">
+                </ion-input>
+                <ion-input formControlName="zipCode" type="number" placeholder="ORT">
+                </ion-input>
+                <span slot="error"
+                  *ngIf="(!abliefernachweisForm.get('address').valid && abliefernachweisForm.get('address').touched) ||(!abliefernachweisForm.get('address').valid && invalid) ">
+                  Diese Felder sind erforderlich.
+                </span>
+              </ion-item>
+
+
+
+
+
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </form>
+    </ion-card>
+  </div>
+
+</ion-content>
+
+
+<ion-footer>
+  <ion-grid fixed>
+    <ion-row>
+
+      <ion-col class="ion-text-center" size="12">
+
+        <ion-button color="primary" (click)="onSubmit()" fill="solid" shape="round" expand="full">
+          <ion-icon name="save" slot="start"></ion-icon>
+          <ion-label> Speichern</ion-label>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-footer>

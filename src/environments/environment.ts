@@ -3,8 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
-};
+  production: false,
+  endpoint: 'https://fotoapp-testing.cognitiveservices.azure.com/',
+  apiKey: 'a06e47ae3a5b4f6ea50f828fc575c7ab'
+}
 
 /*
  * For easier debugging in development mode, you can import the following file
